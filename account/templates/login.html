@@ -1,9 +1,9 @@
 {% extends "theme.html" %}
 
 {% block content %}
-	<h2 align='center'>注册Product Hunt账号</h2>
+	<h2 align='center'>登录Product Hunt账号</h2>
 
-	<form method='POST' action='{% url 'sign' %}' align='center'>
+	<form method='POST' action='{% url 'login' %}' align='center'>
 		{% csrf_token %}
 		用户名：
 		<br>
@@ -15,11 +15,9 @@
 		<br>
 		<input type="password" name="密码">
 		<br>
-		确认密码：
+		{{ 错误 }}
 		<br>
-		<input type="password" name="确认密码">
-		<br>
-		<input class='btn btn-primary' type="submit" name="注册">
+		<input class='btn btn-primary' type="submit" name="登录">
 	</form>
   
 {% endblock content %}
