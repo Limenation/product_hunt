@@ -1,5 +1,38 @@
 {% extends "theme.html" %}
 
 {% block content %}
-  产品发布页面
+ 	<h2 align='center'>发布新应用</h2>
+
+	<form method='POST' action='{% url 'publish' %}' align='center' enctype="multipart/form-data">
+		{% csrf_token %}
+		APP名称：
+		<br>
+		<br>
+		<input value="bilibili干杯" type="textbox" name="title">
+		<br>
+		<br>
+		介绍：
+		<br>
+		<textarea cols=100 rows=10 name='intro'>写APP的介绍</textarea>
+		<br>
+		<br>
+		APP连接:
+		<br>
+		<input value="http://"  type="text" name="url">
+		<br>
+		<br>
+		APP图标(缩略图)：
+		<br>
+		<input type="file" name="icon">
+		<br>
+		<br>
+		　　　　　　大图：
+		<br>
+		<input type="file" name="image">
+		<br>
+		<br>
+		<input class="btn btn-primary"  type="submit" name="publish">
+
+
+	</form>
 {% endblock content %}
